@@ -90,28 +90,20 @@ Já no gráfico **Revenue by Plan**, utilizei diferentes tons de verde para faci
 
 O dashboard apresenta as principais análises de faturamento por meio de indicadores e gráficos:
 
-- **Revenue EA Play Season Pass**
-- **Revenue Minecraft Season Pass**
-- **Revenue by Auto Renewal**
-- **Revenue by Plan**
+- **Revenue by Auto Renewal** — análise do faturamento de acordo com a renovação automática das assinaturas.
+- **Revenue by Plan** — comparação do faturamento entre os planos **Core**, **Standard** e **Ultimate**.
+- **Revenue EA Play Season Pass** — indicador de faturamento relacionado ao EA Play Season Pass.
+- **Revenue Minecraft Season Pass** — indicador de faturamento relacionado ao Minecraft Season Pass.
 
 Também apresenta o período analisado, a data da última atualização e a segmentação **SUBSCRIPTION**, que permite alternar entre os tipos de assinatura.
 
 ## Imagens do projeto
 
-### Visão geral
+### ### Dashboard/ Visão geral
 
 ![Dashboard completo](images/dashboard.png)
 
 *Visão geral do dashboard com os principais indicadores, gráficos e segmentação de dados.*
-
-### Revenue by Auto Renewal
-
-*Análise do faturamento de acordo com a renovação automática das assinaturas.*
-
-### Revenue by Plan
-
-*Comparação do faturamento entre os planos Core, Standard e Ultimate.*
 
 ### Assets
 

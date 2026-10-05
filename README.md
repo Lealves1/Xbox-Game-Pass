@@ -99,7 +99,7 @@ Também apresenta o período analisado, a data da última atualização e a segm
 
 ## Imagens do projeto
 
-### ### Dashboard/ Visão geral
+### Dashboard/ Visão geral
 
 ![Dashboard completo](images/dashboard.png)
 

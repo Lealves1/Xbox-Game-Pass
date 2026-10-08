@@ -24,46 +24,47 @@ Também considerei alguns pontos importantes para a construção do dashboard:
 
 ## Estrutura do projeto
 
-O arquivo Excel foi organizado em quatro abas, cada uma com uma função:
+O arquivo Excel foi organizado em cinco abas, cada uma com uma função:
 
-- **Bases**: contém os dados das assinaturas, planos, datas, renovação automática, valores e Season Pass.
+- **Bases**: contém os dados das assinaturas, planos, datas, renovação automática, valores, Season Pass e cupons.
 - **Assets**: reúne elementos utilizados na identidade visual, como cores, logos e ícones.
-- **Cálculos**: contém as tabelas dinâmicas utilizadas para responder às perguntas de negócio.
-- **Dashboard**: reúne os principais indicadores, gráficos e a segmentação de dados.
+- **Cálculos**: contém as tabelas dinâmicas utilizadas para responder às perguntas de negócio e os cálculos utilizados no dashboard e na aba de indicadores.
+- **Dashboard**: apresenta os principais resultados da análise, com indicadores, gráficos e segmentação de dados.
+- **KPI & Insights**: reúne indicadores adicionais, comparação entre os tipos de assinatura e conclusões a partir dos resultados.
 
 ## Perguntas de negócio
 
 Defini cinco perguntas principais para orientar a análise:
 
-1. Qual é o faturamento total das assinaturas anuais?
-2. Qual é o faturamento das assinaturas anuais, considerando a renovação automática?
+1. Qual é o faturamento total das assinaturas?
+2. Qual é o faturamento das assinaturas por renovação automática?
 3. Qual é o faturamento das assinaturas do EA Play Season Pass?
 4. Qual é o faturamento das assinaturas do Minecraft Season Pass?
 5. Qual é o faturamento por plano?
 
 A quinta pergunta foi acrescentada durante a construção do projeto, quando percebi que a base também permitia comparar o faturamento entre os planos **Core**, **Standard** e **Ultimate**.
 
-Dessa forma, a análise não ficou somente nas perguntas inicialmente definidas e foi possível aproveitar melhor as informações disponíveis na base.
+Dessa forma, foi possível aproveitar melhor as informações disponíveis na base sem adicionar uma análise que não tivesse relação com os dados.
 
 ## Processo de construção
 
 O fluxo utilizado durante o desenvolvimento foi:
 
-**Base de dados → Tabelas Dinâmicas → Gráficos Dinâmicos → Dashboard**
+**Base de dados → Tabelas Dinâmicas → Gráficos Dinâmicos → Dashboard → KPI & Insights**
 
 Primeiro analisei a base para entender quais informações poderiam gerar perguntas de negócio.
 
-Depois, criei as tabelas dinâmicas na aba **Cálculos**, utilizando os resultados dessas tabelas para construir os gráficos e indicadores apresentados no dashboard.
-
-Os gráficos foram mantidos conectados às tabelas dinâmicas, permitindo que as análises fossem atualizadas de acordo com os filtros utilizados.
+Depois, criei as tabelas dinâmicas na aba **Cálculos** e utilizei esses resultados para construir os gráficos e indicadores apresentados no projeto.
 
 Também utilizei uma segmentação de dados para o tipo de assinatura, com as opções:
 
 - **Annual**
-- **Monthly**
 - **Quarterly**
+- **Monthly**
 
-A segmentação está conectada às análises, permitindo alterar o tipo de assinatura e atualizar os resultados apresentados no dashboard.
+A segmentação está conectada às análises, permitindo alterar o tipo de assinatura e atualizar os resultados apresentados no Dashboard.
+
+A partir dos resultados obtidos, também criei a aba **KPI & Insights**, com o objetivo de transformar os números em informações mais fáceis de interpretar.
 
 ## Organização visual
 
@@ -88,35 +89,73 @@ Já no gráfico **Revenue by Plan**, utilizei diferentes tons de verde para faci
 
 ## Dashboard
 
-O dashboard apresenta as principais análises de faturamento por meio de indicadores e gráficos:
+O Dashboard apresenta as principais análises de faturamento por meio de indicadores e gráficos:
 
 - **Revenue by Auto Renewal** — análise do faturamento de acordo com a renovação automática das assinaturas.
 - **Revenue by Plan** — comparação do faturamento entre os planos **Core**, **Standard** e **Ultimate**.
-- **Revenue EA Play Season Pass** — indicador de faturamento relacionado ao EA Play Season Pass.
-- **Revenue Minecraft Season Pass** — indicador de faturamento relacionado ao Minecraft Season Pass.
+- **EA Play Season Pass Revenue** — faturamento relacionado ao EA Play Season Pass.
+- **Minecraft Season Pass Revenue** — faturamento relacionado ao Minecraft Season Pass.
+- **Average Ticket** — valor médio por assinatura.
+- **Top Plan** — plano com maior faturamento no período selecionado.
 
-Também apresenta o período analisado, a data da última atualização e a segmentação **SUBSCRIPTION**, que permite alternar entre os tipos de assinatura.
+Também apresenta o período analisado, a data da última atualização e a segmentação **SUBSCRIPTION**, que permite alternar entre **Annual**, **Quarterly** e **Monthly**.
+
+## KPI & Insights
+
+A aba **KPI & Insights** foi adicionada como uma etapa complementar da análise.
+
+A ideia foi ir além da apresentação dos números e transformar os resultados em informações mais fáceis de interpretar.
+
+Os principais indicadores apresentados são:
+
+- **Auto Renewal**;
+- **Minecraft Season Pass**;
+- **EA Play Season Pass**;
+- **Average Ticket**;
+- **Coupon Value**;
+- **Top Plan**;
+- **Minecraft Adoption**;
+- **EA Play Adoption**.
+
+Os indicadores acompanham o tipo de assinatura selecionado na segmentação do Dashboard.
+
+Também foi criado um **comparativo entre Annual, Quarterly e Monthly**, permitindo observar diferenças de:
+
+- quantidade de assinaturas;
+- faturamento;
+- ticket médio;
+- renovação automática;
+- Minecraft;
+- EA Play;
+- plano líder.
+
+Além disso, a aba possui uma **conclusão automática do período**, utilizando os resultados calculados para destacar os principais pontos da análise.
 
 ## Imagens do projeto
 
-### Dashboard/ Visão geral
+### Dashboard
 
-![Dashboard completo](images/dashboard.png)
+![Dashboard](images/dashboard.png)
 
 *Visão geral do dashboard com os principais indicadores, gráficos e segmentação de dados.*
+
+### KPI & Insights
+
+![KPI & Insights](images/kpi-insights.png)
+
+*Aba criada para complementar o dashboard com indicadores, comparação entre períodos e conclusões da análise.*
+
+### Cálculos
+
+![Cálculos](images/calculos.png)
+
+*Aba Cálculos com as tabelas dinâmicas e os cálculos utilizados para alimentar as análises.*
 
 ### Assets
 
 ![Assets](images/assets.png)
 
-*Organização da identidade visual utilizada no projeto.*
-
-### Cálculos
-
-![Calculos](images/calculos.png)
-
-*Aba Cálculos com as tabelas dinâmicas utilizadas para responder às perguntas de negócio e alimentar os gráficos do dashboard.*
-
+*Organização das cores, logos e elementos utilizados na identidade visual do projeto.*
 
 ## Boas práticas aplicadas
 
@@ -144,13 +183,16 @@ Para visualizar e reproduzir o projeto:
 1. Baixe o arquivo `.xlsx` disponível neste repositório.
 2. Abra o arquivo no Microsoft Excel.
 3. Acesse a aba **Bases** para visualizar os dados utilizados.
-4. Consulte a aba **Cálculos** para visualizar as tabelas dinâmicas.
-5. Acesse a aba **Dashboard** para visualizar as análises.
-6. Utilize a segmentação **SUBSCRIPTION** para alternar entre **Annual**, **Monthly** e **Quarterly**.
+4. Consulte a aba **Cálculos** para visualizar as tabelas dinâmicas e os cálculos.
+5. Acesse a aba **Dashboard** para visualizar as principais análises.
+6. Utilize a segmentação **SUBSCRIPTION** para alternar entre **Annual**, **Quarterly** e **Monthly**.
+7. Acesse a aba **KPI & Insights** para visualizar os indicadores, o comparativo dos períodos e as conclusões da análise.
 
 ## Resultado
 
-O resultado final foi um dashboard simples e organizado, com foco nas principais informações de faturamento das assinaturas do Xbox Game Pass.
+O resultado final foi um dashboard organizado e focado nas principais informações de faturamento das assinaturas do Xbox Game Pass.
+
+A inclusão da aba **KPI & Insights** permitiu complementar o dashboard com indicadores adicionais, comparação entre os diferentes tipos de assinatura e conclusões baseadas nos resultados.
 
 Este projeto me ajudou a entender melhor que a construção de um dashboard vai além da parte visual. Antes de criar os gráficos, é importante entender a base, definir o que quero descobrir com os dados e organizar os cálculos para chegar aos resultados.
 
@@ -165,12 +207,12 @@ Também pude praticar o uso de tabelas dinâmicas, gráficos dinâmicos e segmen
 - Fórmulas e cálculos no Excel
 - Organização e padronização visual
 
- ---
+---
 
 ## Sobre o desenvolvimento
 
-Projeto realizado como parte dos estudos na **DIO**, acompanhando a construção da planilha durante as aulas.  
-Acrescentei funcionalidades e melhorias para tornar a ferramenta mais completa e prática.  
+Projeto realizado como parte dos estudos na **DIO**, acompanhando a construção da planilha durante as aulas.
+
+Acrescentei funcionalidades e melhorias ao longo do desenvolvimento para tornar a ferramenta mais completa e prática, incluindo novas perguntas de negócio, análises e a aba **KPI & Insights**.
 
 **Desenvolvido por Letícia Alves**
-
